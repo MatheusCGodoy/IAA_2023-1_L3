@@ -65,8 +65,8 @@ void AndOrGraph::most_conservative_valuation() {
         node.forced_true = false;
         node.num_forced_successors = 0;
         if (node.type == NodeType::AND && node.successor_ids.empty()) {
-            queue.push_back(node.id);
             node.forced_true = true;
+            queue.push_back(node.id);
         }
     }
 
@@ -101,9 +101,9 @@ void AndOrGraph::most_conservative_valuation() {
 class MinCostOrder
 {
 public:
-    bool operator()(AndOrGraphNode &n1, AndOrGraphNode &n2)
+    bool operator()(AndOrGraphNode *n1, AndOrGraphNode *n2)
     {
-        return n1.additive_cost < n2.additive_cost;
+        return n1->additive_cost < n2->additive_cost;
     }
 };
 
@@ -130,11 +130,16 @@ void AndOrGraph::weighted_most_conservative_valuation() {
       additive costs of all its successors plus its direct cost) and add it to
       the queue.
     */
-    std::priority_queue<AndOrGraphNode &, vector<AndOrGraphNode &>, MinCostOrder> queue;
-    for(AndOrGraphNode node : nodes){
+    
+    /*
+      TODO: add your code for exercise 2 (c) here.
+    */
+    std::priority_queue<AndOrGraphNode*, vector<AndOrGraphNode*>, MinCostOrder> queue;
+    for(AndOrGraphNode &node : nodes){
         if(node.successor_ids.empty() && node.type == NodeType::AND){
             node.additive_cost = 0;
-            queue.push(node);
+            node.forced_true = true;
+            queue.push(&node);
         }
         else{
             node.additive_cost = INT32_MAX;
@@ -142,11 +147,12 @@ void AndOrGraph::weighted_most_conservative_valuation() {
     }
     while (!queue.empty())
     {
-        AndOrGraphNode aux = queue.top();
+        AndOrGraphNode *aux = queue.top();
         queue.pop();
-        for(NodeID pred_id : aux.predecessor_ids){
-            AndOrGraphNode pred_node = nodes[pred_id];
-            if(pred_node.type == NodeType::AND){
+        for(NodeID pred_id : aux->predecessor_ids){
+            AndOrGraphNode *pred_node = &nodes[pred_id];
+            pred_node->num_forced_successors++;
+            if(pred_node->type == NodeType::AND && pred_node->num_forced_successors == pred_node->successor_ids.size()){
                 // To compute h_max: 
                 // int max_cost = 0; // since it has at least 1 successor can start with 0
                 // for(NodeID successor : pred_node.successor_ids){
@@ -155,26 +161,29 @@ void AndOrGraph::weighted_most_conservative_valuation() {
                 // pred_node.additive_cost = max_cost;
 
                 // To calculate h_add:
-                uint64_t add_cost = pred_node.direct_cost; // since it has at least 1 successor can start with 0 or direct cost if its an operator
-                for(NodeID successor : pred_node.successor_ids){
+                uint64_t add_cost = pred_node->direct_cost; // since it has at least 1 successor can start with 0 or direct cost if its an operator
+                for(NodeID successor : pred_node->successor_ids){
                     add_cost += nodes[successor].additive_cost;
                 }
-                pred_node.additive_cost = (int) min(add_cost, (uint64_t)INT32_MAX);
+                pred_node->additive_cost = (int) min(add_cost, (uint64_t)INT32_MAX);
+                
+                pred_node->forced_true = true;
+                queue.push(pred_node);
             }
             else{
-                int min_cost = INT32_MAX; 
-                for(NodeID successor : pred_node.successor_ids){
-                    min_cost = max(min_cost, nodes[successor].additive_cost);
+                if(pred_node->type == NodeType::OR && !pred_node->forced_true){
+                    int min_cost = INT32_MAX; 
+                    for(NodeID successor : pred_node->successor_ids){
+                        min_cost = max(min_cost, nodes[successor].additive_cost);
+                    }
+                    pred_node->additive_cost = min_cost;
+                    
+                    pred_node->forced_true = true;
+                    queue.push(pred_node);
                 }
-                pred_node.additive_cost = min_cost;
             }
-            queue.push(pred_node);
         }
     }
-    
-    /*
-      TODO: add your code for exercise 2 (c) here.
-    */
 }
 
 void add_nodes(vector<string> names, NodeType type, AndOrGraph &g, unordered_map<string, NodeID> &ids) {

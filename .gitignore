@@ -2,7 +2,7 @@
 # *
 
 #Ignore everything in the fast-downward folder
-*/exercise-c/fast-downward
+/exercise-c/fast-downward/builds/**
  
 # But not these files...
 #!.gitignore
@@ -11,6 +11,6 @@
 
 # if the files to be tracked are in subdirectories
 # don't ignore the files we are modifying
-!*/exercise-c/fast-downward/src/search/planopt_heuristics/*
+!/exercise-c/fast-downward/src/search/planopt_heuristics/*
 #!*/exercise-c/castle/*
 #!*/exercise-c/visitall-untyped/*
