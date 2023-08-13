@@ -40,7 +40,7 @@ namespace planopt_heuristics
 
         for(RelaxedOperator oper : relaxed_task.operators)
         {
-            NodeID oper_id = graph.add_node(NodeType::AND);
+            NodeID oper_id = graph.add_node(NodeType::AND, oper.cost);
             
             // Operator Preconditions
             NodeID precond_node_id = graph.add_node(NodeType::AND);
@@ -96,6 +96,7 @@ namespace planopt_heuristics
 
         // TODO: add your code for exercise 2 (c) here.
         graph.weighted_most_conservative_valuation();
+        cout << "GOAL NODE ADD: " << graph.get_node(goal_node_id).additive_cost << endl;
         return graph.get_node(goal_node_id).additive_cost;
     }
 

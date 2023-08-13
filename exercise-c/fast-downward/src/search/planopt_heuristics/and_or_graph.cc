@@ -143,15 +143,22 @@ void AndOrGraph::weighted_most_conservative_valuation() {
         }
         else{
             node.additive_cost = INT32_MAX;
+            node.forced_true = false;
         }
     }
     while (!queue.empty())
     {
+        cout << "QUEUE SIZE: " << queue.size() << endl;
         AndOrGraphNode *aux = queue.top();
+        cout << "NODE ID: " << aux->additive_cost << endl;
+        cout << "NODE VAL: " << aux->id << endl;
+        cout << "NODE # SUCCESSORS: " << aux->successor_ids.size() << endl;
         queue.pop();
         for(NodeID pred_id : aux->predecessor_ids){
             AndOrGraphNode *pred_node = &nodes[pred_id];
             pred_node->num_forced_successors++;
+            cout << "INCREASED SUCCESSORS" << endl;
+            cout << "TYPE: " << (int)pred_node->type << endl;
             if(pred_node->type == NodeType::AND && pred_node->num_forced_successors == pred_node->successor_ids.size()){
                 // To compute h_max: 
                 // int max_cost = 0; // since it has at least 1 successor can start with 0
@@ -166,17 +173,21 @@ void AndOrGraph::weighted_most_conservative_valuation() {
                     add_cost += nodes[successor].additive_cost;
                 }
                 pred_node->additive_cost = (int) min(add_cost, (uint64_t)INT32_MAX);
-                
+                cout << "ADD_COST: " << add_cost << endl;
                 pred_node->forced_true = true;
                 queue.push(pred_node);
             }
             else{
-                if(pred_node->type == NodeType::OR && !pred_node->forced_true){
+                if(pred_node->type == NodeType::OR){
                     int min_cost = INT32_MAX; 
                     for(NodeID successor : pred_node->successor_ids){
-                        min_cost = max(min_cost, nodes[successor].additive_cost);
+                        AndOrGraphNode node = nodes[successor];
+                        int cost = node.additive_cost < INT32_MAX? node.additive_cost + pred_node->direct_cost : node.additive_cost;
+                        min_cost = min(min_cost, cost);
+                        //min_cost = min(min_cost, nodes[successor].additive_cost);
                     }
-                    pred_node->additive_cost = min_cost;
+                    cout << "MIN_COST: " << min_cost << endl;
+                    pred_node->additive_cost = min(min_cost, pred_node->additive_cost);
                     
                     pred_node->forced_true = true;
                     queue.push(pred_node);
