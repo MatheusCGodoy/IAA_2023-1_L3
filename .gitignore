@@ -3,6 +3,7 @@
 
 #Ignore everything in the fast-downward folder
 /exercise-c/fast-downward/builds/**
+/exercise-c/fast-downward/driver/**
  
 # But not these files...
 #!.gitignore
