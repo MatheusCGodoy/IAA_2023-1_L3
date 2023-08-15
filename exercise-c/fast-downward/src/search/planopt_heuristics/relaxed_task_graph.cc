@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -96,14 +97,59 @@ namespace planopt_heuristics
 
         // TODO: add your code for exercise 2 (c) here.
         graph.weighted_most_conservative_valuation();
-        cout << "GOAL NODE ADD: " << graph.get_node(goal_node_id).additive_cost << endl;
+        //cout << "GOAL NODE ADD: " << graph.get_node(goal_node_id).additive_cost << endl;
         return graph.get_node(goal_node_id).additive_cost;
     }
 
     int RelaxedTaskGraph::ff_cost_of_goal()
     {
         // TODO: add your code for exercise 2 (e) here.
-        return -1;
+        int hff = 0;
+        graph.weighted_most_conservative_valuation();
+        AndOrGraphNode goal = graph.get_node(goal_node_id);
+
+        std::unordered_map<NodeID, int> nodes;
+        std::queue<NodeID> queue;
+        queue.push(goal_node_id);
+        //nodes[goal_node_id] = goal.direct_cost;
+        while (!queue.empty())
+        {
+            NodeID front_id = queue.front();
+            queue.pop();
+            AndOrGraphNode front = graph.get_node(front_id);
+            if (front.type == NodeType::AND)
+            {
+                for (NodeID succ_id : front.successor_ids)
+                {
+                    AndOrGraphNode succ = graph.get_node(succ_id);
+                    // if node not in nodes then add it to the queue and store it
+                    //if(nodes.find(succ_id) == nodes.end()){
+                    nodes[succ_id] = succ.direct_cost;
+                    //}
+                }
+            }
+            else
+            {
+                AndOrGraphNode achiever = graph.get_node(front.achiever);
+                // should I check if the achiever is already in nodes?
+                nodes[achiever.id] = achiever.direct_cost;
+            }
+            
+            for (NodeID pred_id : front.predecessor_ids)
+            {
+                if(nodes.find(pred_id) == nodes.end())
+                {
+                    queue.push(pred_id);
+                }
+            }
+        }
+
+        for(auto id_cost_pair : nodes)
+        {
+            hff += id_cost_pair.second;
+        }
+
+        return hff;
     }
 
 }
