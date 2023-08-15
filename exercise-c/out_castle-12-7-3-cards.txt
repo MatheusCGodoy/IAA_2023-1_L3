@@ -1,0 +1,284 @@
+
+
+FastDownward A* with blind heur:
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/translate/translate.py castle/domain.pddl castle/castle-12-7-3-cards.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.035s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.010s CPU, 0.017s wall-clock]
+Generated 20 rules.
+Computing model... [0.150s CPU, 0.148s wall-clock]
+8247 relevant atoms
+2514 auxiliary atoms
+10761 final queue length
+23517 total queue pushes
+Completing instantiation... [0.470s CPU, 0.473s wall-clock]
+Instantiating: [0.640s CPU, 0.645s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.006s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.010s CPU, 0.012s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+48 uncovered facts
+Choosing groups: [0.000s CPU, 0.004s wall-clock]
+Building translation key... [0.010s CPU, 0.001s wall-clock]
+Computing fact groups: [0.040s CPU, 0.032s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.030s CPU, 0.036s wall-clock]
+Translating task: [0.520s CPU, 0.521s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+63 propositions removed
+Detecting unreachable propositions: [0.260s CPU, 0.254s wall-clock]
+Reordering and filtering variables...
+99 of 99 variables necessary.
+44 of 99 mutex groups necessary.
+5888 of 5888 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.100s CPU, 0.103s wall-clock]
+Translator variables: 99
+Translator derived variables: 0
+Translator facts: 688
+Translator goal facts: 44
+Translator mutex groups: 44
+Translator total mutex groups size: 545
+Translator operators: 5888
+Translator axioms: 0
+Translator task size: 45426
+Translator peak memory: 60592 KB
+Writing output... [0.080s CPU, 0.079s wall-clock]
+Done! [1.670s CPU, 1.694s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/downward --search 'astar(blind())' --internal-plan-file sas_plan < output.sas
+reading input... [t=0s]
+done reading input! [t=0.0759262s]
+Initializing blind search heuristic...
+Building successor generator...done! [t=0.0838897s]
+peak memory difference for successor generator creation: 1376 KB
+time for successor generation creation: 0.00398075s
+Variables: 99
+FactPairs: 688
+Bytes per state: 28
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for blind: 1
+[g=0, 1 evaluated, 0 expanded, t=0.0838897s, 13160 KB]
+f = 1 [1 evaluated, 0 expanded, t=0.0838897s, 13160 KB]
+Initial heuristic value for blind: 1
+pruning method: none
+f = 2 [5 evaluated, 1 expanded, t=0.0838897s, 13160 KB]
+f = 3 [14 evaluated, 5 expanded, t=0.0838897s, 13160 KB]
+f = 4 [28 evaluated, 14 expanded, t=0.0838897s, 13160 KB]
+f = 5 [43 evaluated, 28 expanded, t=0.0838897s, 13160 KB]
+f = 6 [68 evaluated, 43 expanded, t=0.0838897s, 13160 KB]
+f = 7 [116 evaluated, 68 expanded, t=0.0879018s, 13160 KB]
+f = 8 [192 evaluated, 116 expanded, t=0.0879018s, 13160 KB]
+f = 9 [303 evaluated, 192 expanded, t=0.0879018s, 13160 KB]
+f = 10 [451 evaluated, 303 expanded, t=0.0879018s, 13160 KB]
+f = 11 [673 evaluated, 451 expanded, t=0.0919084s, 13160 KB]
+f = 12 [961 evaluated, 673 expanded, t=0.0958474s, 13160 KB]
+f = 13 [1319 evaluated, 961 expanded, t=0.0999068s, 13160 KB]
+f = 14 [1635 evaluated, 1319 expanded, t=0.103829s, 13160 KB]
+f = 15 [1857 evaluated, 1635 expanded, t=0.10789s, 13160 KB]
+f = 16 [2018 evaluated, 1857 expanded, t=0.10789s, 13160 KB]
+f = 17 [2132 evaluated, 2018 expanded, t=0.111871s, 13160 KB]
+f = 18 [2235 evaluated, 2132 expanded, t=0.111871s, 13160 KB]
+f = 19 [2401 evaluated, 2235 expanded, t=0.111871s, 13160 KB]
+f = 20 [2709 evaluated, 2401 expanded, t=0.11589s, 13160 KB]
+f = 21 [3130 evaluated, 2709 expanded, t=0.119871s, 13160 KB]
+f = 22 [3588 evaluated, 3130 expanded, t=0.124031s, 13160 KB]
+f = 23 [4006 evaluated, 3588 expanded, t=0.131844s, 13160 KB]
+f = 24 [4304 evaluated, 4006 expanded, t=0.135867s, 13160 KB]
+f = 25 [4472 evaluated, 4304 expanded, t=0.139885s, 13160 KB]
+f = 26 [4552 evaluated, 4472 expanded, t=0.139885s, 13160 KB]
+f = 27 [4580 evaluated, 4552 expanded, t=0.143829s, 13160 KB]
+f = 28 [4585 evaluated, 4580 expanded, t=0.143829s, 13160 KB]
+Completely explored state space -- no solution!
+Actual search time: 0.0599389s [t=0.143829s]
+Expanded 4585 state(s).
+Reopened 0 state(s).
+Evaluated 4585 state(s).
+Evaluations: 4585
+Generated 14879 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 4580 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 4585 state(s).
+Generated until last jump: 14871 state(s).
+Number of registered states: 4585
+Int hash set load factor: 4585/8192 = 0.559692
+Int hash set resizes: 13
+Search time: 0.0599389s
+Total time: 0.143829s
+Search stopped without finding a solution.
+Peak memory: 13160 KB
+Remove intermediate file output.sas
+search exit code: 12
+
+Driver aborting after search
+Our prunning:
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/translate/translate.py castle/domain.pddl castle/castle-12-7-3-cards.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.015s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.020s CPU, 0.016s wall-clock]
+Generated 20 rules.
+Computing model... [0.150s CPU, 0.149s wall-clock]
+8247 relevant atoms
+2514 auxiliary atoms
+10761 final queue length
+23517 total queue pushes
+Completing instantiation... [0.480s CPU, 0.476s wall-clock]
+Instantiating: [0.650s CPU, 0.648s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.005s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.001s wall-clock]
+Instantiating groups... [0.010s CPU, 0.012s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+48 uncovered facts
+Choosing groups: [0.010s CPU, 0.004s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.030s CPU, 0.032s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.050s CPU, 0.036s wall-clock]
+Translating task: [0.530s CPU, 0.523s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+63 propositions removed
+Detecting unreachable propositions: [0.260s CPU, 0.255s wall-clock]
+Reordering and filtering variables...
+99 of 99 variables necessary.
+44 of 99 mutex groups necessary.
+5888 of 5888 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.100s CPU, 0.102s wall-clock]
+Translator variables: 99
+Translator derived variables: 0
+Translator facts: 688
+Translator goal facts: 44
+Translator mutex groups: 44
+Translator total mutex groups size: 545
+Translator operators: 5888
+Translator axioms: 0
+Translator task size: 45426
+Translator peak memory: 60592 KB
+Writing output... [0.080s CPU, 0.077s wall-clock]
+Done! [1.680s CPU, 1.676s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/downward --search 'astar(planopt_relaxed_task_graph())' --internal-plan-file sas_plan < output.sas
+reading input... [t=0s]
+done reading input! [t=0.0740731s]
+Building successor generator...done! [t=0.0940503s]
+peak memory difference for successor generator creation: 300 KB
+time for successor generation creation: 0.00796414s
+Variables: 99
+FactPairs: 688
+Bytes per state: 28
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for planopt_relaxed_task_graph: 1
+[g=0, 1 evaluated, 0 expanded, t=0.0980455s, 18296 KB]
+f = 1 [1 evaluated, 0 expanded, t=0.0980455s, 18296 KB]
+Initial heuristic value for planopt_relaxed_task_graph: 1
+pruning method: none
+f = 2 [5 evaluated, 1 expanded, t=0.110026s, 18296 KB]
+f = 3 [14 evaluated, 5 expanded, t=0.129994s, 18296 KB]
+f = 4 [24 evaluated, 11 expanded, t=0.150007s, 18296 KB]
+f = 5 [35 evaluated, 17 expanded, t=0.173981s, 18296 KB]
+f = 6 [54 evaluated, 26 expanded, t=0.218976s, 18296 KB]
+f = 7 [86 evaluated, 43 expanded, t=0.293877s, 18296 KB]
+f = 8 [138 evaluated, 71 expanded, t=0.401869s, 18296 KB]
+f = 9 [219 evaluated, 113 expanded, t=0.541834s, 18296 KB]
+f = 10 [335 evaluated, 170 expanded, t=0.765615s, 18296 KB]
+f = 11 [500 evaluated, 261 expanded, t=1.07754s, 18296 KB]
+f = 12 [735 evaluated, 392 expanded, t=1.57697s, 18296 KB]
+f = 13 [1035 evaluated, 597 expanded, t=2.17281s, 18296 KB]
+f = 14 [1287 evaluated, 849 expanded, t=2.66472s, 18296 KB]
+f = 15 [1453 evaluated, 1054 expanded, t=2.98534s, 18296 KB]
+f = 16 [1589 evaluated, 1191 expanded, t=3.25632s, 18296 KB]
+f = 17 [1697 evaluated, 1307 expanded, t=3.47579s, 18296 KB]
+f = 18 [1799 evaluated, 1401 expanded, t=3.67563s, 18296 KB]
+f = 19 [1957 evaluated, 1489 expanded, t=3.96353s, 18296 KB]
+f = 20 [2235 evaluated, 1618 expanded, t=4.41545s, 18296 KB]
+f = 21 [2564 evaluated, 1818 expanded, t=4.89925s, 18296 KB]
+f = 22 [2869 evaluated, 2032 expanded, t=5.33117s, 18296 KB]
+f = 23 [3119 evaluated, 2222 expanded, t=5.6826s, 18296 KB]
+f = 24 [3275 evaluated, 2374 expanded, t=5.88645s, 18296 KB]
+f = 25 [3349 evaluated, 2462 expanded, t=5.97445s, 18296 KB]
+f = 26 [3382 evaluated, 2500 expanded, t=6.01042s, 18296 KB]
+f = 27 [3391 evaluated, 2516 expanded, t=6.0184s, 18296 KB]
+Completely explored state space -- no solution!
+Actual search time: 5.92035s [t=6.0184s]
+Expanded 2520 state(s).
+Reopened 0 state(s).
+Evaluated 3391 state(s).
+Evaluations: 3391
+Generated 10000 state(s).
+Dead ends: 871 state(s).
+Expanded until last jump: 2516 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 3391 state(s).
+Generated until last jump: 9992 state(s).
+Number of registered states: 3391
+Int hash set load factor: 3391/4096 = 0.827881
+Int hash set resizes: 12
+Search time: 5.92435s
+Total time: 6.0184s
+Search stopped without finding a solution.
+Peak memory: 18296 KB
+Remove intermediate file output.sas
+search exit code: 12
+
+Driver aborting after search
