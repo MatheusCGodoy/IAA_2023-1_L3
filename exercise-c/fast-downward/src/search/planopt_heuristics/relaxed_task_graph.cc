@@ -123,23 +123,19 @@ namespace planopt_heuristics
                 {
                     AndOrGraphNode succ = graph.get_node(succ_id);
                     // if node not in nodes then add it to the queue and store it
-                    //if(nodes.find(succ_id) == nodes.end()){
-                    nodes[succ_id] = succ.direct_cost;
-                    //}
+                    if(nodes.find(succ_id) == nodes.end()){
+                        nodes[succ_id] = succ.direct_cost;
+                        queue.push(succ_id);
+                    } 
                 }
             }
             else
             {
                 AndOrGraphNode achiever = graph.get_node(front.achiever);
                 // should I check if the achiever is already in nodes?
-                nodes[achiever.id] = achiever.direct_cost;
-            }
-            
-            for (NodeID pred_id : front.predecessor_ids)
-            {
-                if(nodes.find(pred_id) == nodes.end())
-                {
-                    queue.push(pred_id);
+                if(nodes.find(achiever.id) == nodes.end()){
+                    nodes[achiever.id] = achiever.direct_cost;
+                    queue.push(achiever.id);
                 }
             }
         }

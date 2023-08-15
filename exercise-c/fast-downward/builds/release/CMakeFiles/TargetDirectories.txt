@@ -1,6 +1,6 @@
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/CMakeFiles/rebuild_cache.dir
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/CMakeFiles/edit_cache.dir
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/CMakeFiles/translate.dir
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/search/CMakeFiles/rebuild_cache.dir
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/search/CMakeFiles/edit_cache.dir
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/search/CMakeFiles/downward.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/CMakeFiles/rebuild_cache.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/CMakeFiles/edit_cache.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/CMakeFiles/translate.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/search/CMakeFiles/rebuild_cache.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/search/CMakeFiles/edit_cache.dir
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/search/CMakeFiles/downward.dir

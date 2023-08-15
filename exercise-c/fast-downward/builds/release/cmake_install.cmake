@@ -1,4 +1,4 @@
-# Install script for directory: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/src
+# Install script for directory: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/search/cmake_install.cmake")
+  include("/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/search/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/builds/release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

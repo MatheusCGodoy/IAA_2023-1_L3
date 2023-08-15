@@ -1,4 +1,4 @@
-# Install script for directory: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/exercise-c/fast-downward/src/search
+# Install script for directory: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
