@@ -8,8 +8,8 @@ for problem in fileList:
     print('PROBLEMA: ' + problem)
     print('\n' + result_theirs)
     with open('out_' + problem.split('.')[0] + '.txt', 'w') as file:
-        file.write('\n\nFastDownward A* with blind heur:\n')
+        file.write('FastDownward A* with blind heur:\n')
         file.write(result_theirs)
-        file.write('Our prunning:\n')
+        file.write('\n\nOur prunning:\n')
         file.write(result_mine)
         file.close()

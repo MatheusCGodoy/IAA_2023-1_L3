@@ -1,0 +1,464 @@
+FastDownward A* with lmcut heur (optimal plan) h*:
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/translate/translate.py castle/domain.pddl castle/castle-6-4-7-cards.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.007s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.010s CPU, 0.006s wall-clock]
+Generated 20 rules.
+Computing model... [0.060s CPU, 0.062s wall-clock]
+2107 relevant atoms
+902 auxiliary atoms
+3009 final queue length
+5991 total queue pushes
+Completing instantiation... [0.120s CPU, 0.122s wall-clock]
+Instantiating: [0.190s CPU, 0.196s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.007s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.004s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+24 uncovered facts
+Choosing groups: [0.000s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.017s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.011s wall-clock]
+Translating task: [0.130s CPU, 0.137s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+36 propositions removed
+Detecting unreachable propositions: [0.100s CPU, 0.113s wall-clock]
+Reordering and filtering variables...
+48 of 48 variables necessary.
+20 of 48 mutex groups necessary.
+1337 of 1337 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.030s CPU, 0.028s wall-clock]
+Translator variables: 48
+Translator derived variables: 0
+Translator facts: 245
+Translator goal facts: 20
+Translator mutex groups: 20
+Translator total mutex groups size: 177
+Translator operators: 1337
+Translator axioms: 0
+Translator task size: 10680
+Translator peak memory: 38488 KB
+Writing output... [0.020s CPU, 0.024s wall-clock]
+Done! [0.520s CPU, 0.532s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan < output.sas
+reading input... [t=0s]
+done reading input! [t=0.0226462s]
+Initializing landmark cut heuristic...
+Building successor generator...done! [t=0.0305865s]
+peak memory difference for successor generator creation: 236 KB
+time for successor generation creation: 0.00350655s
+Variables: 48
+FactPairs: 245
+Bytes per state: 16
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for lmcut: 18
+[g=0, 1 evaluated, 0 expanded, t=0.0305865s, 10896 KB]
+f = 18 [1 evaluated, 0 expanded, t=0.0305865s, 10896 KB]
+Initial heuristic value for lmcut: 18
+pruning method: none
+f = 19 [6 evaluated, 1 expanded, t=0.0345683s, 10896 KB]
+New best heuristic value for lmcut: 17
+[g=2, 9 evaluated, 2 expanded, t=0.0385557s, 10896 KB]
+New best heuristic value for lmcut: 15
+[g=2, 12 evaluated, 2 expanded, t=0.0385557s, 10896 KB]
+New best heuristic value for lmcut: 14
+[g=4, 17 evaluated, 4 expanded, t=0.0425163s, 10896 KB]
+New best heuristic value for lmcut: 13
+[g=5, 20 evaluated, 5 expanded, t=0.0425163s, 10896 KB]
+f = 20 [44 evaluated, 16 expanded, t=0.0625757s, 10896 KB]
+f = 21 [94 evaluated, 43 expanded, t=0.0982488s, 10896 KB]
+New best heuristic value for lmcut: 12
+[g=9, 105 evaluated, 46 expanded, t=0.102239s, 10896 KB]
+f = 22 [185 evaluated, 90 expanded, t=0.144048s, 10896 KB]
+New best heuristic value for lmcut: 11
+[g=10, 199 evaluated, 94 expanded, t=0.146167s, 10896 KB]
+New best heuristic value for lmcut: 10
+[g=11, 243 evaluated, 107 expanded, t=0.162159s, 10896 KB]
+f = 23 [409 evaluated, 181 expanded, 1 reopened, t=0.234055s, 10896 KB]
+New best heuristic value for lmcut: 9
+[g=14, 412 evaluated, 182 expanded, 1 reopened, t=0.237977s, 10896 KB]
+f = 24 [730 evaluated, 342 expanded, 2 reopened, t=0.369557s, 10896 KB]
+f = 25 [1400 evaluated, 719 expanded, 10 reopened, t=0.667353s, 10896 KB]
+New best heuristic value for lmcut: 8
+[g=16, 1416 evaluated, 723 expanded, 10 reopened, t=0.671398s, 10896 KB]
+New best heuristic value for lmcut: 7
+[g=18, 1432 evaluated, 729 expanded, 10 reopened, t=0.675352s, 10896 KB]
+f = 26 [2242 evaluated, 1290 expanded, 19 reopened, t=0.970645s, 10896 KB]
+New best heuristic value for lmcut: 6
+[g=19, 2255 evaluated, 1295 expanded, 19 reopened, t=0.974652s, 10896 KB]
+New best heuristic value for lmcut: 5
+[g=20, 2260 evaluated, 1296 expanded, 19 reopened, t=0.974652s, 10896 KB]
+New best heuristic value for lmcut: 4
+[g=21, 2267 evaluated, 1297 expanded, 19 reopened, t=0.974652s, 10896 KB]
+New best heuristic value for lmcut: 3
+[g=23, 2281 evaluated, 1300 expanded, 19 reopened, t=0.978621s, 10896 KB]
+New best heuristic value for lmcut: 2
+[g=24, 2296 evaluated, 1303 expanded, 19 reopened, t=0.978621s, 10896 KB]
+New best heuristic value for lmcut: 1
+[g=25, 2298 evaluated, 1304 expanded, 19 reopened, t=0.978621s, 10896 KB]
+New best heuristic value for lmcut: 0
+[g=26, 2304 evaluated, 1305 expanded, 19 reopened, t=0.978621s, 10896 KB]
+Solution found!
+Actual search time: 0.948034s [t=0.978621s]
+discard spade2 heart2 spadea (1)
+move club3 club5 club4 (1)
+discard heart2 club6 hearta (1)
+discard spade3 heart4 spade2 (1)
+move club5 spade4 club6 (1)
+discard spade4 diamond2 spade3 (1)
+discard diamond2 diamond4 diamonda (1)
+move heart4 diamond3 club5 (1)
+discard diamond3 heart3 diamond2 (1)
+discard heart3 spade5 heart2 (1)
+move club3 club4 diamond4 (1)
+discard heart4 club5 heart3 (1)
+move club4 spade6 club5 (1)
+discard spade5 pile3 spade4 (1)
+discard spade6 heart5 spade5 (1)
+discard heart5 diamond6 heart4 (1)
+move diamond6 club2 pile3 (1)
+discard club2 pile1 cluba (1)
+discard club3 diamond4 club2 (1)
+discard club4 club5 club3 (1)
+discard club5 club6 club4 (1)
+discard club6 diamond5 club5 (1)
+discard diamond4 pile0 diamond3 (1)
+discard diamond5 heart6 diamond4 (1)
+discard diamond6 pile3 diamond5 (1)
+discard heart6 pile2 heart5 (1)
+Plan length: 26 step(s).
+Plan cost: 26
+Expanded 1306 state(s).
+Reopened 19 state(s).
+Evaluated 2307 state(s).
+Evaluations: 2307
+Generated 6350 state(s).
+Dead ends: 33 state(s).
+Expanded until last jump: 1290 state(s).
+Reopened until last jump: 19 state(s).
+Evaluated until last jump: 2242 state(s).
+Generated until last jump: 6271 state(s).
+Number of registered states: 2307
+Int hash set load factor: 2307/4096 = 0.563232
+Int hash set resizes: 12
+Search time: 0.948034s
+Total time: 0.978621s
+Solution found.
+Peak memory: 10896 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+
+
+Our planopt_add:
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/translate/translate.py castle/domain.pddl castle/castle-6-4-7-cards.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.006s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.010s CPU, 0.006s wall-clock]
+Generated 20 rules.
+Computing model... [0.040s CPU, 0.044s wall-clock]
+2107 relevant atoms
+902 auxiliary atoms
+3009 final queue length
+5991 total queue pushes
+Completing instantiation... [0.120s CPU, 0.124s wall-clock]
+Instantiating: [0.180s CPU, 0.178s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.000s CPU, 0.004s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.010s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+24 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.010s CPU, 0.012s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.009s wall-clock]
+Translating task: [0.120s CPU, 0.123s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+36 propositions removed
+Detecting unreachable propositions: [0.080s CPU, 0.078s wall-clock]
+Reordering and filtering variables...
+48 of 48 variables necessary.
+20 of 48 mutex groups necessary.
+1337 of 1337 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.040s CPU, 0.035s wall-clock]
+Translator variables: 48
+Translator derived variables: 0
+Translator facts: 245
+Translator goal facts: 20
+Translator mutex groups: 20
+Translator total mutex groups size: 177
+Translator operators: 1337
+Translator axioms: 0
+Translator task size: 10680
+Translator peak memory: 38488 KB
+Writing output... [0.030s CPU, 0.037s wall-clock]
+Done! [0.460s CPU, 0.478s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/downward --search 'eager_greedy([planopt_add()])' --internal-plan-file sas_plan < output.sas
+reading input... [t=0s]
+done reading input! [t=0.0211183s]
+Building successor generator...done! [t=0.0250598s]
+peak memory difference for successor generator creation: 104 KB
+time for successor generation creation: 0s
+Variables: 48
+FactPairs: 245
+Bytes per state: 16
+Conducting best first search without reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for planopt_add: 555
+[g=0, 1 evaluated, 0 expanded, t=0.134383s, 13832 KB]
+Initial heuristic value for planopt_add: 555
+pruning method: none
+New best heuristic value for planopt_add: 480
+[g=1, 2 evaluated, 1 expanded, t=0.226302s, 13832 KB]
+New best heuristic value for planopt_add: 414
+[g=2, 7 evaluated, 2 expanded, t=0.719665s, 13832 KB]
+New best heuristic value for planopt_add: 412
+[g=2, 12 evaluated, 2 expanded, t=1.15117s, 13832 KB]
+New best heuristic value for planopt_add: 343
+[g=3, 13 evaluated, 3 expanded, t=1.24316s, 13832 KB]
+New best heuristic value for planopt_add: 288
+[g=4, 17 evaluated, 4 expanded, t=1.58712s, 13832 KB]
+New best heuristic value for planopt_add: 280
+[g=5, 20 evaluated, 5 expanded, t=1.84713s, 13832 KB]
+New best heuristic value for planopt_add: 237
+[g=6, 22 evaluated, 6 expanded, t=2.01495s, 15876 KB]
+New best heuristic value for planopt_add: 185
+[g=7, 27 evaluated, 7 expanded, t=2.42671s, 15876 KB]
+New best heuristic value for planopt_add: 151
+[g=8, 34 evaluated, 8 expanded, t=2.97807s, 15876 KB]
+New best heuristic value for planopt_add: 145
+[g=9, 36 evaluated, 9 expanded, t=3.13402s, 15876 KB]
+New best heuristic value for planopt_add: 117
+[g=10, 66 evaluated, 25 expanded, t=4.81553s, 15876 KB]
+New best heuristic value for planopt_add: 110
+[g=11, 69 evaluated, 26 expanded, t=5.03503s, 15876 KB]
+New best heuristic value for planopt_add: 104
+[g=12, 75 evaluated, 27 expanded, t=5.44253s, 15876 KB]
+New best heuristic value for planopt_add: 99
+[g=12, 77 evaluated, 27 expanded, t=5.57052s, 15876 KB]
+New best heuristic value for planopt_add: 97
+[g=13, 84 evaluated, 28 expanded, t=6.03048s, 15876 KB]
+New best heuristic value for planopt_add: 78
+[g=14, 86 evaluated, 29 expanded, t=6.16242s, 15876 KB]
+New best heuristic value for planopt_add: 72
+[g=15, 91 evaluated, 30 expanded, t=6.52189s, 15876 KB]
+New best heuristic value for planopt_add: 58
+[g=16, 95 evaluated, 31 expanded, t=6.78173s, 15876 KB]
+New best heuristic value for planopt_add: 46
+[g=17, 99 evaluated, 32 expanded, t=7.06521s, 15876 KB]
+New best heuristic value for planopt_add: 32
+[g=19, 109 evaluated, 35 expanded, t=7.79255s, 15876 KB]
+New best heuristic value for planopt_add: 28
+[g=20, 112 evaluated, 36 expanded, t=7.99649s, 15876 KB]
+New best heuristic value for planopt_add: 17
+[g=21, 117 evaluated, 37 expanded, t=8.38789s, 15876 KB]
+New best heuristic value for planopt_add: 13
+[g=22, 122 evaluated, 38 expanded, t=8.76734s, 15876 KB]
+New best heuristic value for planopt_add: 10
+[g=22, 125 evaluated, 38 expanded, t=8.96349s, 15876 KB]
+New best heuristic value for planopt_add: 5
+[g=23, 130 evaluated, 39 expanded, t=9.33882s, 15876 KB]
+New best heuristic value for planopt_add: 2
+[g=24, 136 evaluated, 40 expanded, t=9.7988s, 15876 KB]
+New best heuristic value for planopt_add: 1
+[g=25, 139 evaluated, 41 expanded, t=10.0987s, 15876 KB]
+New best heuristic value for planopt_add: 0
+[g=26, 145 evaluated, 42 expanded, t=10.5541s, 15876 KB]
+Solution found!
+Actual search time: 10.7115s [t=10.8459s]
+discard spade2 heart2 spadea (1)
+move club3 club5 club4 (1)
+discard heart2 club6 hearta (1)
+discard spade3 heart4 spade2 (1)
+move club5 spade4 club6 (1)
+discard spade4 diamond2 spade3 (1)
+discard diamond2 diamond4 diamonda (1)
+move heart4 diamond3 club5 (1)
+discard diamond3 heart3 diamond2 (1)
+discard diamond4 pile0 diamond3 (1)
+discard heart3 spade5 heart2 (1)
+discard heart4 club5 heart3 (1)
+discard spade5 pile3 spade4 (1)
+move club3 club4 pile0 (1)
+move club4 spade6 club5 (1)
+discard spade6 heart5 spade5 (1)
+discard heart5 diamond6 heart4 (1)
+move diamond6 club2 pile3 (1)
+discard club2 pile1 cluba (1)
+discard club3 pile0 club2 (1)
+discard club4 club5 club3 (1)
+discard club5 club6 club4 (1)
+discard club6 diamond5 club5 (1)
+discard diamond5 heart6 diamond4 (1)
+discard diamond6 pile3 diamond5 (1)
+discard heart6 pile2 heart5 (1)
+Plan length: 26 step(s).
+Plan cost: 26
+Expanded 43 state(s).
+Reopened 0 state(s).
+Evaluated 148 state(s).
+Evaluations: 148
+Generated 189 state(s).
+Dead ends: 8 state(s).
+Number of registered states: 148
+Int hash set load factor: 148/256 = 0.578125
+Int hash set resizes: 8
+Search time: 10.8208s
+Total time: 10.8459s
+Solution found.
+Peak memory: 15876 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+
+
+FastDownward A* with lmcut heur (optimal relaxed plan) h+:
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/translate/translate.py castle/domain.pddl castle/castle-6-4-7-cards.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.007s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.007s wall-clock]
+Generated 20 rules.
+Computing model... [0.060s CPU, 0.061s wall-clock]
+2107 relevant atoms
+902 auxiliary atoms
+3009 final queue length
+5991 total queue pushes
+Completing instantiation... [0.150s CPU, 0.157s wall-clock]
+Instantiating: [0.230s CPU, 0.230s wall-clock]
+Computing fact groups...
+Finding invariants...
+7 initial candidates
+Finding invariants: [0.010s CPU, 0.004s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.000s CPU, 0.003s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+24 uncovered facts
+Choosing groups: [0.010s CPU, 0.002s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.020s CPU, 0.015s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.002s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.010s CPU, 0.011s wall-clock]
+Translating task: [0.170s CPU, 0.171s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+36 propositions removed
+Detecting unreachable propositions: [0.090s CPU, 0.086s wall-clock]
+Reordering and filtering variables...
+48 of 48 variables necessary.
+20 of 48 mutex groups necessary.
+1337 of 1337 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.040s CPU, 0.033s wall-clock]
+Translator variables: 48
+Translator derived variables: 0
+Translator facts: 245
+Translator goal facts: 20
+Translator mutex groups: 20
+Translator total mutex groups size: 177
+Translator operators: 1337
+Translator axioms: 0
+Translator task size: 10680
+Translator peak memory: 38488 KB
+Writing output... [0.030s CPU, 0.034s wall-clock]
+Done! [0.590s CPU, 0.592s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/builds/release/bin/downward --search 'astar(lmcut())' --translate-option --relaxed --internal-plan-file sas_plan < output.sas
+reading input... [t=0s]
+done reading input! [t=0.0196769s]
+Peak memory: 10260 KB
+Remove intermediate file output.sas
+search exit code: 33
+
+Driver aborting after search

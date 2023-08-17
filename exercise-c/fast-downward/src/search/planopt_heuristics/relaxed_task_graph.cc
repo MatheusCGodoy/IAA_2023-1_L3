@@ -111,7 +111,7 @@ namespace planopt_heuristics
         std::unordered_map<NodeID, int> nodes;
         std::queue<NodeID> queue;
         queue.push(goal_node_id);
-        //nodes[goal_node_id] = goal.direct_cost;
+        nodes[goal_node_id] = goal.direct_cost;
         while (!queue.empty())
         {
             NodeID front_id = queue.front();
@@ -126,13 +126,13 @@ namespace planopt_heuristics
                     if(nodes.find(succ_id) == nodes.end()){
                         nodes[succ_id] = succ.direct_cost;
                         queue.push(succ_id);
-                    } 
+                    }
                 }
             }
             else
             {
                 AndOrGraphNode achiever = graph.get_node(front.achiever);
-                // should I check if the achiever is already in nodes?
+                // if node not in nodes then add it to the queue and store it
                 if(nodes.find(achiever.id) == nodes.end()){
                     nodes[achiever.id] = achiever.direct_cost;
                     queue.push(achiever.id);

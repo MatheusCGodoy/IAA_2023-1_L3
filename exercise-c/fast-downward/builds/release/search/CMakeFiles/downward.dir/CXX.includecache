@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/and_or_graph.cc
-and_or_graph.h
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/and_or_graph.h
-../utils/collections.h
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/utils/collections.h
-algorithm
--
-deque
--
-iostream
--
-queue
--
-limits
--
-
 /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/and_or_graph.h
 ../utils/hash.h
 /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/utils/hash.h
@@ -30,23 +14,27 @@ vector
 unordered_map
 -
 
-/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/utils/collections.h
-algorithm
--
-cassert
--
-cstddef
--
-functional
--
-iterator
--
-unordered_map
--
-unordered_set
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/relaxed_task.h
+string
 -
 vector
 -
+
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/relaxed_task_graph.cc
+relaxed_task_graph.h
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/relaxed_task_graph.h
+iostream
+-
+vector
+-
+queue
+-
+
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/relaxed_task_graph.h
+and_or_graph.h
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/and_or_graph.h
+relaxed_task.h
+/home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/planopt_heuristics/relaxed_task.h
 
 /home/matheusgodoy/Documents/UFRGS/2023-1/IAA/T3/IAA_2023-1_L3/exercise-c/fast-downward/src/search/utils/hash.h
 cassert
